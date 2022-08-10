@@ -1,0 +1,41 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createNote, updateNote } from '../features/notes/noteSlice';
+
+function UpdateNote() {
+   const [newTitle, setNewTitle] = useState('');
+   const [newDescription, setnewDescription] = useState('');
+
+   const dispatch = useDispatch();
+
+   const onSubmit = (e) => {
+      e.preventDefault();
+
+      dispatch(updateNote({ title, description }));
+
+      setNewTitle('');
+      setnewDescription('');
+   };
+
+   return (
+      <section className="form">
+         <form onSubmit={onSubmit}>
+            <div className="form-group">
+               <label htmlFor="text">Title</label>
+               <input type="text" name="newTitle" id="newTitle" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+            </div>
+            <div className="form-group">
+               <label htmlFor="text">Description</label>
+               <input type="text" name="newDescription" id="newDescription" value={newDescription} onChange={(e) => setnewDescription(e.target.value)} />
+            </div>
+            <div className="form-group">
+               <button className="btn btn-block" type="submit">
+                  Update Note
+               </button>
+            </div>
+         </form>
+      </section>
+   );
+}
+
+export default UpdateNote;
