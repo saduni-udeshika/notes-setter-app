@@ -1,2 +1,2 @@
 /node_modules
-.env // I will not add this .env file, since this is an assignment purpose project. But if this is a production level app we need to add this to the .gitignore for security reasons
+#.env // I will not add this .env file, since this is an assignment purpose project. But if this is a production level app we need to add this to the .gitignore for security reasons

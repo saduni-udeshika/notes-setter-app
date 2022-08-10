@@ -5,7 +5,7 @@
 ### install dependencies,
 
 ```
-1. create env file
+1. create .env file
 2. npm install
 3. cd frontend
 4. npm install
